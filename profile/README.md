@@ -11,4 +11,4 @@
 
 Our product code is private. The public repositories here are sample submissions used to test Vettly.
 
-[twistorlabs.com](https://twistorlabs.com) · [Blog](https://twistorlabs.com/blog) · [LinkedIn](https://www.linkedin.com/company/twistor-labs-private-limited/) · hello@twistorlabs.com
+[twistorlabs.com](https://twistorlabs.com) · [Blog](https://twistorlabs.com/blog) · [LinkedIn](https://www.linkedin.com/company/twistor-labs-private-limited/) · [Instagram](https://www.instagram.com/twistor_labs/) · hello@twistorlabs.com
