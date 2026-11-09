@@ -1,0 +1,49 @@
+name: security
+
+on:
+  workflow_call:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Scan new commits for secrets
+        uses: docker://ghcr.io/gitleaks/gitleaks:v8.30.1
+        with:
+          args: >-
+            git --redact --no-banner .
+            --log-opts=${{ github.event_name == 'pull_request' && format('{0}..{1}', github.event.pull_request.base.sha, github.event.pull_request.head.sha) || format('{0}..{1}', github.event.before, github.event.after) }}
+
+  zizmor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Org reusable workflows may ride a branch ref; everything else must be hash-pinned.
+      - name: Write zizmor policy
+        run: |
+          cat > "$RUNNER_TEMP/zizmor.yml" <<'YAML'
+          rules:
+            unpinned-uses:
+              config:
+                policies:
+                  "Twistor-Labs/*": ref-pin
+                  "*": hash-pin
+          YAML
+      - uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          version: 1.32.0
+          advanced-security: false
+          config: ${{ runner.temp }}/zizmor.yml
+          fail-on-no-inputs: false
