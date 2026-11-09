@@ -5,31 +5,52 @@
     "config:recommended",
     ":semanticCommits",
     ":dependencyDashboard",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
+    "customManagers:githubActionsVersions"
   ],
   "timezone": "Asia/Kolkata",
-  "schedule": ["before 6am on monday"],
+  "schedule": [
+    "before 6am on monday"
+  ],
   "prConcurrentLimit": 5,
   "prHourlyLimit": 0,
   "minimumReleaseAge": "3 days",
   "osvVulnerabilityAlerts": true,
   "automergeStrategy": "squash",
-  "lockFileMaintenance": { "enabled": true, "schedule": ["before 6am on monday"] },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "matchCurrentVersion": "!/^0/",
       "groupName": "non-major dependencies",
       "groupSlug": "non-major"
     },
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "groupName": "GitHub Actions"
     },
     {
-      "matchPackageNames": ["expo", "expo-*", "@expo/*", "react-native", "react-native-*", "@react-native/*"],
+      "matchPackageNames": [
+        "expo",
+        "expo-*",
+        "@expo/*",
+        "react-native",
+        "react-native-*",
+        "@react-native/*"
+      ],
       "groupName": "Expo SDK",
       "automerge": false
     }
-  ]
+  ],
+  "rebaseWhen": "conflicted"
 }
