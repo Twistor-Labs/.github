@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Automerge non-major updates once CI is green. Only for repos with pull_request CI.",
+  "platformAutomerge": false,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["expo", "expo-*", "@expo/*", "react-native", "react-native-*", "@react-native/*"],
+      "automerge": false
+    }
+  ]
+}
