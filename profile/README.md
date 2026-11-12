@@ -10,8 +10,8 @@
 | [Vettly](https://vettly.twistorlabs.com) | AI-validated take-home assignments for hiring teams. | In build |
 | [Atwater](https://atwater.twistorlabs.com) | Pocket health app: snap meals, connect your band, see Fuel, Burn and Recovery. Private, on your phone. | In build |
 | [Drawloom](https://drawloom.twistorlabs.com) | Your system, drawn by hand. Explained step by step. | Private beta |
-| Ektara | AI telecalling for Indian businesses. Calls each new lead in their language. | In build |
-| Sangi | A terminal coding agent that puts every run on a receipt, with a hard budget stop. | In build |
+| [Ektara](https://twistorlabs.com/products/ektara) | AI telecalling for Indian businesses. Calls each new lead in their language. | In build |
+| [Sangi](https://twistorlabs.com/products/sangi) | A terminal coding agent that puts every run on a receipt, with a hard budget stop. | In build |
 | [Genizah](https://genizah.twistorlabs.com) | Free up disk space without losing what matters. Asks first, sends files to the Trash. | Live, free |
 | [The Twistor's Engineer](https://engineer.twistorlabs.com) | 14 engineering skills for any coding agent, 150 rules, each one sourced. | Live, free |
 
